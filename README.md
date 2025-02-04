@@ -33,6 +33,12 @@ Este proyecto aborda la clasificación de imágenes del conjunto de datos CIFAR-
 - Modelo avanzado mejoró hasta 82–83% gracias a BatchNorm y L2.
 - Modelo superior, con data augmentation y scheduler, llegó a ~85–86%, mostrando la relevancia de aumentar y ajustar adecuadamente los datos.
 
+| **Modelo**       | **Capas Conv** | **Dropout**    | **Epochs** | **Overfitting** | **Batch Norm** | **Regularización L2** | **Data Aug** | **Precisión en Test** | **F1-Score Macro** | **Mejores Clases**      | **Peores Clases**      |
+|-------------------|----------------|----------------|------------|-----------------|----------------|------------------------|------------------------|-----------------------|--------------------|------------------------|-----------------------|
+| **CNN básica**    | 3              | (0.3, 0.5)     | 50     | Ligero      | No             | No                     | No                     | **78.5%**             | 0.78               | Coche, Barco, Camión    | Gato, Ave, Perro      |
+| **CNN avanzada**  | 4              | (0.25, 0.4)    | 85     | Leve        | Sí             | Sí                     | No                     | **82.8%**             | 0.82               | Coche, Barco, Camión    | Gato, Perro, Ave      |
+| **CNN superior**  | 4              | (0.2, 0.3)     | 100   | Mínimo      | Sí             | Sí                     | Sí                     | **85.6%**             | 0.85               | Coche, Barco, Camión    | Gato, Perro, Ave      |
+
 ## Próximas mejoras
 - Explorar arquitecturas más profundas (ResNet, VGG, etc) para lograr superar el 90% de exactitud.
 - Ajustar aún más la intensidad de data augmentation o usar técnicas adicionales.
